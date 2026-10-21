@@ -2,7 +2,10 @@
 
 adsorption energy calculation
 
-사전학습 범용 머신러닝 포텐셜(uMLIP) MACE로 Cu(111) 표면 위 Li 원자 1개의 흡착 에너지를 자리별로 계산한다. GPU 없이 CPU만으로 실행한다.
+사전학습 범용 머신러닝 포텐셜(uMLIP) MACE로 Cu(111)과 Ag(111) 표면 위 Li 원자 1개의 흡착 에너지를 자리별로 계산한다. GPU 없이 CPU만으로 실행한다.
+
+- Cu(111): 아래 [결과](#결과)와 [결과 검증](#결과-검증)
+- Ag(111): [Ag(111) 결과](#ag111-결과), Cu와의 비교는 [Cu(111) vs Ag(111)](#cu111-vs-ag111)
 
 ## 실행 방법
 
@@ -23,6 +26,15 @@ python adsorption.py
 python adsorption.py --model medium-mpa-0  --out results/models/medium-mpa-0
 python adsorption.py --model medium-omat-0 --out results/models/medium-omat-0
 python verify.py results results/models/medium-mpa-0 results/models/medium-omat-0
+```
+
+다른 표면 금속(fcc)은 `--metal`로 지정한다. Ag(111) 결과는 이렇게 만들었다:
+
+```bash
+python adsorption.py --metal Ag --out results/Ag111
+python adsorption.py --metal Ag --model medium-mpa-0  --out results/Ag111/models/medium-mpa-0
+python adsorption.py --metal Ag --model medium-omat-0 --out results/Ag111/models/medium-omat-0
+python verify.py --out results/Ag111 results/Ag111 results/Ag111/models/medium-mpa-0 results/Ag111/models/medium-omat-0
 ```
 
 > 참고: 이번 실행 환경(Claude Code 클라우드 세션)에서는 `download.pytorch.org`가 네트워크 정책으로 막혀 있었다. 그래서 PyPI 기본 `torch` 휠(`2.14.1+cu130`)을 설치했다. GPU가 없으니 CUDA는 쓰지 않았고(`torch.cuda.is_available() == False`) 계산은 모두 CPU에서 했다.
@@ -154,11 +166,69 @@ E_ads 단위는 eV다. \* top과 bridge는 안정한 흡착 자리가 아니다(
 - **절대값은 모델마다 0.1 eV 넘게 다르다.** hollow 기준 MP-0b3 −0.56, OMAT-0 −0.47, MPA-0 −0.42 eV다. 이 차이가 사전학습 uMLIP의 불확실성 규모를 보여준다.
 - fcc와 hcp의 차이는 MPA-0과 OMAT-0에서 2–3 meV로 사실상 0이다. MP-0b3만 26 meV로 hcp를 선호한다. 따라서 **fcc와 hcp 중 어디가 더 안정한지는 이 계산으로 결론 낼 수 없다.**
 - OMAT-0 medium은 Academic Software License(ASL) 모델이다. 실행하면 라이선스 동의 문구가 출력된다.
-- 계산 시간(4개 자리 최적화 합계): MP-0b3 25.5 s, MPA-0 46.3 s, OMAT-0 116.1 s다. 단, MPA-0와 OMAT-0는 다른 검증 계산과 CPU를 함께 쓰면서 돌았기 때문에 시간이 부풀려져 있다. 세 모델 모두 medium 크기라 단독으로 돌리면 비슷할 것으로 예상하지만 직접 확인하지는 않았다.
+- 계산 시간(4개 자리 최적화 합계): MP-0b3 25.5 s, MPA-0 46.3 s, OMAT-0 116.1 s다. 단, MPA-0와 OMAT-0는 다른 검증 계산과 CPU를 함께 쓰면서 돌았기 때문에 시간이 부풀려져 있다. 세 모델 모두 medium 크기라 단독으로 돌리면 비슷할 것으로 예상하지만 직접 확인하지는 않았다. 실제로 Ag(111)을 하나씩 따로 돌렸을 때는 세 모델 모두 23–24 s였다.
+
+## Ag(111) 결과
+
+Cu(111)과 같은 조건이다: 4×4, 4층(64 원자), 진공 15 Å, 아래 2층 고정, BFGS fmax 0.05 eV/Å, Li bcc bulk 기준. 격자상수와 Li 기준 에너지는 모델마다 같은 모델로 최적화한 값을 썼다. 결과 파일은 `results/Ag111/`에 있고, 구성은 `results/`와 같다(다른 모델 결과는 `results/Ag111/models/`).
+
+### E_ads와 높이
+
+| 자리 | MP-0b3 E_ads (eV) | MPA-0 E_ads (eV) | OMAT-0 E_ads (eV) | 높이 h_layer, MP-0b3 (Å) | 계산 시간, MP-0b3 (s) |
+|---|---:|---:|---:|---:|---:|
+| fcc hollow | **−0.492** | −0.208 | −0.326 | 2.099 | 4.7 |
+| hcp hollow | −0.473 | **−0.224** | **−0.328** | 2.089 | 5.2 |
+| top* | −0.342 | −0.057 | −0.113 | 2.253 | 6.7 |
+| bridge* | −0.461 | −0.185 | −0.302 | 2.129 | 6.8 |
+| hcp − fcc (meV) | +19 | −16 | −3 | | |
+
+\* top과 bridge는 안정한 흡착 자리가 아니다(아래 섭동 시험 참고).
+
+![Ag(111) E_ads by model](results/Ag111/model_comparison.png)
+
+- 4개 자리 최적화에 걸린 시간 합계는 MP-0b3 23.4 s, MPA-0 24.2 s, OMAT-0 23.8 s다. 이번에는 다른 작업과 겹치지 않게 하나씩 돌렸다.
+- **hollow가 가장 안정하고, top이 가장 불리하다.** 세 모델 모두 같다.
+- **fcc와 hcp 중 어디가 더 안정한지는 모델마다 다르다.** MP-0b3는 fcc를 19 meV 선호하고, MPA-0는 hcp를 16 meV, OMAT-0는 hcp를 3 meV 선호한다. Cu와 마찬가지로 이 계산으로는 결론 낼 수 없다.
+- 절대값은 모델 간 차이가 Cu보다 더 크다. hollow 기준으로 −0.22 ~ −0.49 eV, 약 0.27 eV 차이다.
+
+### 검증 (MP-0b3)
+
+| 시작 자리 | 가장 가까운 Ag 3개까지 거리 (Å) | 최적화 중 수평 이동 (Å) | h_coord (Å) | 섭동 시험 결과 (세 모델 공통) |
+|---|---|---:|---:|---|
+| fcc hollow | 2.739 / 2.739 / 2.739 | 0.000 | 2.131 | fcc로 복귀 |
+| hcp hollow | 2.734 / 2.734 / 2.734 | 0.000 | 2.122 | hcp로 복귀 |
+| top | 2.464 / 3.672 / 3.672 | 0.000 | 2.464 | **fcc로 이동 (1.69–1.70 Å)** |
+| bridge | 2.662 / 2.662 / 3.271 | 0.009 | 2.193 | **+⊥는 fcc로, −⊥는 hcp로 이동 (0.81–0.83 Å)** |
+
+- Cu처럼 원래 최적화에서는 대칭 때문에 아무 자리도 미끄러지지 않았다. 하지만 0.2 Å 밀어주면 top과 bridge는 세 모델 모두 hollow로 이동했다. Cu에서 보였던 0b3 bridge의 작은 언덕 같은 예외는 Ag에서는 없었다.
+- 기준 격자상수:
+
+  | 모델 | Ag a (Å) | 실험값 대비 |
+  |---|---:|---:|
+  | MP-0b3 | 4.1608 | +1.8% |
+  | MPA-0 | 4.1609 | +1.8% |
+  | OMAT-0 | 4.1477 | +1.5% |
+
+  실험값은 4.086 Å이고, 세 모델 모두 MACE로 최적화한 값이다. ±1%에서 에너지가 4–5 meV/atom 높아 최소점인 것도 확인했다. Cu와 달리 Ag는 실험값보다 1.5–1.8% 크게 나오는데, PBE가 Ag 격자상수를 과대평가하는 경향과 같은 방향이다.
+- `verify.py` 수정 사항: Ag의 bridge 자리에서는 Li 아래 두 Ag 원자가 2.94 Å에서 3.02–3.04 Å로 벌어진다. 원래 코드는 bridge 기준점을 만들 때 0.1 Å보다 많이 벌어진 원자쌍을 빼버려서, 이 bridge를 hollow로 잘못 판정했다. 허용 오차를 최근접 거리의 25%로 넓혀 고쳤다. 고친 코드로 Cu 검증도 다시 돌렸고, Cu 결과 CSV는 이전과 완전히 같다.
+
+## Cu(111) vs Ag(111)
+
+가장 안정한 hollow 자리의 E_ads (eV):
+
+| 모델 | Cu(111) | Ag(111) | Ag − Cu |
+|---|---:|---:|---:|
+| MP-0b3 | −0.563 (hcp) | −0.492 (fcc) | +0.07 |
+| MPA-0 | −0.422 (hcp) | −0.224 (hcp) | +0.20 |
+| OMAT-0 | −0.467 (hcp) | −0.328 (hcp) | +0.14 |
+
+- **세 모델 모두 Li는 Ag(111)보다 Cu(111)에 더 강하게 흡착한다.** 이 경향은 모델과 무관하게 같다.
+- 하지만 그 차이의 크기는 모델마다 0.07–0.20 eV로 다르다. 그래서 "얼마나 더 강한지"는 이 계산으로 정할 수 없고 DFT 검증이 필요하다.
+- Li 높이(맨 위 층 평균 기준)는 Ag에서 2.04–2.10 Å로, Cu의 2.05–2.09 Å과 비슷하다. Ag–Li 거리(2.68–2.74 Å)는 Cu–Li 거리(2.55–2.58 Å)보다 길지만, 대신 Ag 표면의 hollow가 더 넓어서 Li가 그만큼 더 깊이 들어간다.
 
 ## 한계
 
 - **사전학습 uMLIP 결과는 경향 비교용이다.** MACE-MP-0b3는 Materials Project(PBE/PBE+U) bulk 데이터 위주로 학습했다. 표면이나 흡착 에너지의 절대값에는 수십~수백 meV 수준의 오차가 있을 수 있다. 정확한 값이 필요하면 같은 구조(`results/POSCAR/`)로 DFT 계산을 해서 검증해야 한다.
 - **단일 Li 원자 흡착이다.** 4×4 셀에 Li 1개(커버리지 1/16 ML)만 넣었기 때문에, Li 사이 상호작용이나 커버리지가 높아질 때의 효과는 반영되지 않았다.
 - 슬랩 4층에 아래 2층을 고정했고, 영점 에너지와 온도 효과는 넣지 않았다. top과 bridge가 안정한 자리가 아니라는 판단은 섭동 시험으로 한 것이다. 진동수(Hessian) 분석은 하지 않았다.
-- 세 모델의 hollow 자리 E_ads가 0.1–0.15 eV씩 차이 난다. 모델 하나의 절대값만 보고 결론을 내리면 안 된다.
+- 세 모델의 hollow 자리 E_ads가 Cu에서 0.1–0.15 eV, Ag에서 최대 0.27 eV 차이 난다. 모델 하나의 절대값만 보고 결론을 내리면 안 된다.

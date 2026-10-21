@@ -1,0 +1,30 @@
+{
+  "model": "medium-0b3",
+  "versions": {
+    "mace-torch": "0.3.16",
+    "torch": "2.14.1",
+    "ase": "3.29.0",
+    "e3nn": "0.4.4"
+  },
+  "device": "cpu",
+  "threads": 4,
+  "settings": {
+    "metal": "Ag",
+    "adsorbate": "Li",
+    "adsorbate_bulk": "bcc",
+    "slab_size": [
+      4,
+      4
+    ],
+    "n_layers": 4,
+    "vacuum": 15.0,
+    "n_fixed_layers": 2,
+    "fmax": 0.05
+  },
+  "a_metal (Å)": 4.1608,
+  "a_adsorbate_bulk (Å)": 3.4165,
+  "E_adsorbate_bulk_per_atom (eV)": -1.9008,
+  "E_clean_slab (eV)": -173.0537,
+  "time_bulk (s)": 6.4,
+  "time_clean_slab (s)": 1.9
+}

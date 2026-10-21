@@ -1,0 +1,6 @@
+start site,push,final site (perturbed),xy offset from site (Å),moved from start (Å),E_ads (eV),BFGS steps
+fcc hollow,17deg,fcc hollow,0.019,0.019,-0.2118,31
+hcp hollow,17deg,hcp hollow,0.012,0.015,-0.2274,29
+top,17deg,fcc hollow,0.023,1.69,-0.2115,60
+bridge,+perp,fcc hollow,0.031,0.827,-0.2111,36
+bridge,-perp,hcp hollow,0.013,0.816,-0.2269,28

@@ -1,0 +1,5 @@
+site,d1 (Å),d2 (Å),d3 (Å),lateral shift (Å),final site,xy offset from site (Å),slid?,h_layer (Å),h_coord (Å),Ag below: layer,Ag below: xy dist (Å),h_below (Å)
+fcc hollow,2.687,2.687,2.687,0.0,fcc hollow,0.0,no,2.042,2.055,3,0.0,6.846
+hcp hollow,2.683,2.683,2.683,0.0,hcp hollow,0.0,no,2.038,2.051,2,0.0,4.465
+top,2.48,3.687,3.687,0.0,top,0.0,no,2.268,2.48,1,0.0,2.48
+bridge,2.644,2.644,3.251,0.009,bridge,0.01,no,2.102,2.162,2,0.844,4.535

@@ -5,6 +5,7 @@ E_ads = E(slab+X) - E(slab) - E(X bulk, 원자당)
 사용법:
     python adsorption.py                                   # 맨 위 MODEL, RESULTS_DIR 사용
     python adsorption.py --model medium-mpa-0 --out results/models/medium-mpa-0
+    python adsorption.py --metal Ag --out results/Ag111
 결과는 RESULTS_DIR(기본 results/) 폴더에 저장된다.
 """
 
@@ -84,12 +85,13 @@ def build_slab(a):
 
 
 def main():
-    global MODEL, RESULTS_DIR
+    global METAL, MODEL, RESULTS_DIR
     parser = argparse.ArgumentParser()
+    parser.add_argument("--metal", default=METAL, help="표면 금속 (fcc)")
     parser.add_argument("--model", default=MODEL, help="mace_mp model 이름 또는 체크포인트 경로")
     parser.add_argument("--out", default=RESULTS_DIR, help="결과 폴더")
     args = parser.parse_args()
-    MODEL, RESULTS_DIR = args.model, args.out
+    METAL, MODEL, RESULTS_DIR = args.metal, args.model, args.out
 
     torch.set_num_threads(os.cpu_count())
     for sub in ("", "logs", "POSCAR"):
