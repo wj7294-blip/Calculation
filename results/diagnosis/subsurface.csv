@@ -1,0 +1,25 @@
+model,metal,config,E (eV),Li z - top layer (Å),BFGS steps
+medium-0b3,Cu,substitution (layer 1),-0.6034,0.551,18
+medium-0b3,Cu,subsurface octahedral (1-2),1.6048,-0.58,38
+medium-0b3,Cu,subsurface tetrahedral (1-2),1.9158,-0.336,48
+medium-0b3,Cu,adsorbed fcc hollow,-0.5356,2.064,13
+medium-0b3,Ag,substitution (layer 1),-0.688,-0.005,4
+medium-0b3,Ag,subsurface octahedral (1-2),0.7528,-0.787,48
+medium-0b3,Ag,subsurface tetrahedral (1-2),1.1198,-0.395,44
+medium-0b3,Ag,adsorbed fcc hollow,-0.4929,2.102,14
+medium-mpa-0,Cu,substitution (layer 1),-0.4089,0.315,16
+medium-mpa-0,Cu,subsurface octahedral (1-2),1.8965,-0.463,35
+medium-mpa-0,Cu,subsurface tetrahedral (1-2),2.1768,-0.285,40
+medium-mpa-0,Cu,adsorbed fcc hollow,-0.4149,2.063,15
+medium-mpa-0,Ag,substitution (layer 1),-0.5468,-0.011,10
+medium-mpa-0,Ag,subsurface octahedral (1-2),0.6884,-0.617,40
+medium-mpa-0,Ag,subsurface tetrahedral (1-2),0.9958,-0.297,43
+medium-mpa-0,Ag,adsorbed fcc hollow,-0.2058,2.073,11
+medium-omat-0,Cu,substitution (layer 1),-0.4235,0.332,17
+medium-omat-0,Cu,subsurface octahedral (1-2),1.8044,-0.467,34
+medium-omat-0,Cu,subsurface tetrahedral (1-2),2.068,-0.277,39
+medium-omat-0,Cu,adsorbed fcc hollow,-0.4663,2.085,15
+medium-omat-0,Ag,substitution (layer 1),-0.5465,-0.001,15
+medium-omat-0,Ag,subsurface octahedral (1-2),0.7766,-0.673,39
+medium-omat-0,Ag,subsurface tetrahedral (1-2),1.1181,-0.361,41
+medium-omat-0,Ag,adsorbed fcc hollow,-0.3122,2.082,17

@@ -1,0 +1,33 @@
+{
+  "spec": "mattersim:MatterSim-v1.0.0-5M.pth",
+  "package": "mattersim",
+  "version": "1.2.5",
+  "fmax": 0.01,
+  "a_Li_bcc (Å)": 3.4297,
+  "E_Li_bulk (eV/atom)": -1.9053000211715698,
+  "Cu": {
+    "a (Å)": 3.6181,
+    "E_ads fcc (eV)": -0.4916999936103821,
+    "height (Å)": 1.996,
+    "E_sub layer1 (eV)": -0.48539999127388,
+    "BFGS steps clean/ads/sub": [
+      4,
+      14,
+      12
+    ]
+  },
+  "Ag": {
+    "a (Å)": 4.1647,
+    "E_ads fcc (eV)": -0.2754000127315521,
+    "height (Å)": 2.102,
+    "E_sub layer1 (eV)": -0.6082000136375427,
+    "BFGS steps clean/ads/sub": [
+      3,
+      13,
+      12
+    ]
+  },
+  "Ag - Cu (eV)": 0.21629999577999115,
+  "Ag - Cu, most stable (eV)": -0.11649999767541885,
+  "time (s)": 25.0
+}

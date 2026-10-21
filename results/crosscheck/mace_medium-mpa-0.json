@@ -1,0 +1,33 @@
+{
+  "spec": "mace:medium-mpa-0",
+  "package": "mace-torch",
+  "version": "0.3.16",
+  "fmax": 0.01,
+  "a_Li_bcc (Å)": 3.4271,
+  "E_Li_bulk (eV/atom)": -1.908,
+  "Cu": {
+    "a (Å)": 3.6392,
+    "E_ads fcc (eV)": -0.4149,
+    "height (Å)": 2.056,
+    "E_sub layer1 (eV)": -0.4089,
+    "BFGS steps clean/ads/sub": [
+      4,
+      15,
+      16
+    ]
+  },
+  "Ag": {
+    "a (Å)": 4.1609,
+    "E_ads fcc (eV)": -0.2058,
+    "height (Å)": 2.062,
+    "E_sub layer1 (eV)": -0.5468,
+    "BFGS steps clean/ads/sub": [
+      5,
+      11,
+      10
+    ]
+  },
+  "Ag - Cu (eV)": 0.2091,
+  "Ag - Cu, most stable (eV)": -0.1319,
+  "time (s)": 388.1
+}

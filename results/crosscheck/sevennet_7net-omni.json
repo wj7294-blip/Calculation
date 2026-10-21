@@ -1,0 +1,33 @@
+{
+  "spec": "sevennet:7net-omni",
+  "package": "sevenn",
+  "version": "0.13.0",
+  "fmax": 0.01,
+  "a_Li_bcc (Å)": 3.4114,
+  "E_Li_bulk (eV/atom)": -1.9052,
+  "Cu": {
+    "a (Å)": 3.6221,
+    "E_ads fcc (eV)": -0.6284,
+    "height (Å)": 2.068,
+    "E_sub layer1 (eV)": -0.4574,
+    "BFGS steps clean/ads/sub": [
+      4,
+      8,
+      19
+    ]
+  },
+  "Ag": {
+    "a (Å)": 4.1578,
+    "E_ads fcc (eV)": -0.3523,
+    "height (Å)": 2.053,
+    "E_sub layer1 (eV)": -0.5726,
+    "BFGS steps clean/ads/sub": [
+      2,
+      16,
+      11
+    ]
+  },
+  "Ag - Cu (eV)": 0.2761,
+  "Ag - Cu, most stable (eV)": 0.0558,
+  "time (s)": 1841.2
+}

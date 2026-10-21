@@ -1,0 +1,33 @@
+{
+  "spec": "orb:orb_v3_conservative_inf_omat",
+  "package": "orb-models",
+  "version": "0.7.0",
+  "fmax": 0.01,
+  "a_Li_bcc (Å)": 3.4432,
+  "E_Li_bulk (eV/atom)": -1.901,
+  "Cu": {
+    "a (Å)": 3.6134,
+    "E_ads fcc (eV)": -0.784,
+    "height (Å)": 2.025,
+    "E_sub layer1 (eV)": -0.5802,
+    "BFGS steps clean/ads/sub": [
+      4,
+      15,
+      23
+    ]
+  },
+  "Ag": {
+    "a (Å)": 4.1452,
+    "E_ads fcc (eV)": -0.5269,
+    "height (Å)": 2.061,
+    "E_sub layer1 (eV)": -0.62,
+    "BFGS steps clean/ads/sub": [
+      8,
+      20,
+      19
+    ]
+  },
+  "Ag - Cu (eV)": 0.2571,
+  "Ag - Cu, most stable (eV)": 0.164,
+  "time (s)": 404.0
+}
