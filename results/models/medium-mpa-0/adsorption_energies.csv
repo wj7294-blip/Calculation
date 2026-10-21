@@ -1,0 +1,5 @@
+site,E_ads (eV),height (Å),lateral shift (Å),BFGS steps,time (s),E_total (eV)
+fcc hollow,-0.4197,2.066,0.0,5,7.8,-250.7504
+hcp hollow,-0.4217,2.056,0.0,4,4.7,-250.7524
+top,-0.253,2.188,0.0,8,21.1,-250.5837
+bridge,-0.3924,2.073,0.001,7,12.7,-250.7231

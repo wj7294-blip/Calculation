@@ -1,0 +1,30 @@
+{
+  "model": "medium-mpa-0",
+  "versions": {
+    "mace-torch": "0.3.16",
+    "torch": "2.14.1",
+    "ase": "3.29.0",
+    "e3nn": "0.4.4"
+  },
+  "device": "cpu",
+  "threads": 4,
+  "settings": {
+    "metal": "Cu",
+    "adsorbate": "Li",
+    "adsorbate_bulk": "bcc",
+    "slab_size": [
+      4,
+      4
+    ],
+    "n_layers": 4,
+    "vacuum": 15.0,
+    "n_fixed_layers": 2,
+    "fmax": 0.05
+  },
+  "a_metal (Å)": 3.6392,
+  "a_adsorbate_bulk (Å)": 3.4271,
+  "E_adsorbate_bulk_per_atom (eV)": -1.908,
+  "E_clean_slab (eV)": -248.4227,
+  "time_bulk (s)": 2.1,
+  "time_clean_slab (s)": 5.1
+}
