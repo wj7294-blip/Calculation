@@ -1,0 +1,4 @@
+mace-torch
+ase
+matplotlib
+pandas
