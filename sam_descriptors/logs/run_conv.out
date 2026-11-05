@@ -1,0 +1,7 @@
+# 2026-11-05 02:40:13 시작: 분자 5개, conformer 50개, workers 3
+[1/5] SH-Ph-CF3_50conf | conformer 50개 | 최저 E -34.995864 Eh | HOMO -10.58 eV | 14.5 s
+[2/5] COOH-C3-SO3H_50conf | conformer 50개 | 최저 E -36.279283 Eh | HOMO -11.53 eV | 18.5 s
+[3/5] PO3H2-C3-OCH3_50conf | conformer 50개 | 최저 E -33.105718 Eh | HOMO -11.05 eV | 19.6 s
+[4/5] L-cysteine-zwitterion_50conf | conformer 50개 | 최저 E -24.304764 Eh | HOMO -10.46 eV | 12.0 s
+[5/5] ZW-SO3-n3-m4_50conf | conformer 50개 | 최저 E -51.665478 Eh | HOMO -9.91 eV | 68.8 s
+# 완료: 총 84 s

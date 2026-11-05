@@ -1,0 +1,10 @@
+rdkit>=2024.3
+ase>=3.23
+tblite>=0.4
+pandas
+numpy
+scipy
+matplotlib
+koreanize-matplotlib
+py3Dmol
+pyscf        # molden → cube (HOMO/LUMO 등고면). 없어도 나머지 파이프라인은 동작

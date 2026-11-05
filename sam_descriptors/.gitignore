@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+results/convergence/xyz/
+results/convergence/molden/
+molden/*.5d

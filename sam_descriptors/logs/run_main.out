@@ -1,0 +1,141 @@
+# 2026-11-05 02:31:42 시작: 분자 87개, conformer 20개, workers 4
+[1/87] SH-Ph-H | conformer 20개 | 최저 E -19.141607 Eh | HOMO -10.09 eV | 3.9 s
+[2/87] SH-Ph-F | conformer 20개 | 최저 E -23.372015 Eh | HOMO -10.28 eV | 4.1 s
+[3/87] SH-Ph-CH3 | conformer 20개 | 최저 E -22.313742 Eh | HOMO -9.96 eV | 4.9 s
+[4/87] SH-Ph-CF3 | conformer 20개 | 최저 E -34.995854 Eh | HOMO -10.58 eV | 5.7 s
+[5/87] SH-Ph-CN | conformer 20개 | 최저 E -23.666767 Eh | HOMO -10.50 eV | 5.5 s
+[6/87] SH-Ph-OCH3 | conformer 20개 | 최저 E -26.377626 Eh | HOMO -9.87 eV | 6.1 s
+[7/87] SH-Ph-COOH | conformer 20개 | 최저 E -29.447227 Eh | HOMO -10.41 eV | 6.0 s
+[8/87] SH-C3-H | conformer 20개 | 최저 E -13.751758 Eh | HOMO -10.00 eV | 0.9 s
+[9/87] SH-C3-CH3 | conformer 20개 | 최저 E -16.917036 Eh | HOMO -9.96 eV | 1.5 s
+[10/87] SH-C3-F | conformer 20개 | 최저 E -17.975752 Eh | HOMO -10.12 eV | 1.5 s
+[11/87] SH-C3-CN | conformer 20개 | 최저 E -18.271671 Eh | HOMO -10.23 eV | 1.6 s
+[12/87] SH-Ph-SO3H | conformer 20개 | 최저 E -34.612704 Eh | HOMO -10.53 eV | 9.0 s
+[13/87] SH-C3-CF3 | conformer 20개 | 최저 E -29.604674 Eh | HOMO -10.23 eV | 2.4 s
+[14/87] SH-Ph-NH2 | conformer 20개 | 최저 E -22.582561 Eh | HOMO -9.42 eV | 6.4 s
+[15/87] SH-C3-OCH3 | conformer 20개 | 최저 E -20.973131 Eh | HOMO -10.00 eV | 2.0 s
+[02:31:59] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:31:59] UFFTYPER: Unrecognized charge state for atom: 0
+[16/87] SH-C3-COOH | conformer 20개 | 최저 E -24.051236 Eh | HOMO -10.06 eV | 1.9 s
+[02:31:59] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:31:59] UFFTYPER: Unrecognized charge state for atom: 0
+[02:31:59] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:31:59] UFFTYPER: Unrecognized charge state for atom: 0
+[17/87] SH-C3-NH2 | conformer 20개 | 최저 E -17.171638 Eh | HOMO -9.91 eV | 1.7 s
+[02:32:00] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:00] UFFTYPER: Unrecognized charge state for atom: 0
+[02:32:00] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:00] UFFTYPER: Unrecognized charge state for atom: 0
+[18/87] SH-C3-SO3H | conformer 20개 | 최저 E -29.222183 Eh | HOMO -9.89 eV | 5.4 s
+[02:32:03] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:03] UFFTYPER: Unrecognized charge state for atom: 0
+[02:32:03] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:03] UFFTYPER: Unrecognized charge state for atom: 0
+[19/87] PO3H2-Ph-F | conformer 20개 | 최저 E -34.915395 Eh | HOMO -10.47 eV | 10.5 s
+[02:32:10] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:10] UFFTYPER: Unrecognized charge state for atom: 0
+[02:32:11] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:11] UFFTYPER: Unrecognized charge state for atom: 0
+[20/87] PO3H2-Ph-H | conformer 20개 | 최저 E -30.687286 Eh | HOMO -10.36 eV | 13.7 s
+[02:32:13] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:13] UFFTYPER: Unrecognized charge state for atom: 0
+[21/87] PO3H2-Ph-CH3 | conformer 20개 | 최저 E -33.861303 Eh | HOMO -10.26 eV | 14.7 s
+[02:32:14] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:14] UFFTYPER: Unrecognized charge state for atom: 0
+[22/87] PO3H2-Ph-CF3 | conformer 20개 | 최저 E -46.537206 Eh | HOMO -10.64 eV | 14.5 s
+[02:32:17] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:17] UFFTYPER: Unrecognized charge state for atom: 0
+[23/87] PO3H2-Ph-CN | conformer 20개 | 최저 E -35.209612 Eh | HOMO -10.62 eV | 12.8 s
+[02:32:23] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:23] UFFTYPER: Unrecognized charge state for atom: 0
+[24/87] PO3H2-Ph-OCH3 | conformer 20개 | 최저 E -37.926261 Eh | HOMO -10.16 eV | 11.4 s
+[02:32:24] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:24] UFFTYPER: Unrecognized charge state for atom: 0
+[25/87] PO3H2-Ph-COOH | conformer 20개 | 최저 E -40.989962 Eh | HOMO -10.53 eV | 12.7 s
+[02:32:27] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:27] UFFTYPER: Unrecognized charge state for atom: 0
+[26/87] PO3H2-C3-H | conformer 20개 | 최저 E -25.291593 Eh | HOMO -11.94 eV | 8.0 s
+[02:32:32] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:32] UFFTYPER: Unrecognized charge state for atom: 0
+[27/87] PO3H2-Ph-NH2 | conformer 20개 | 최저 E -34.139496 Eh | HOMO -9.86 eV | 9.1 s
+[02:32:32] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:32] UFFTYPER: Unrecognized charge state for atom: 0
+[28/87] PO3H2-C3-CH3 | conformer 20개 | 최저 E -28.455189 Eh | HOMO -10.28 eV | 6.9 s
+[02:32:34] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:34] UFFTYPER: Unrecognized charge state for atom: 0
+[29/87] PO3H2-C3-F | conformer 20개 | 최저 E -29.512818 Eh | HOMO -10.37 eV | 6.3 s
+[02:32:38] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:38] UFFTYPER: Unrecognized charge state for atom: 0
+[30/87] PO3H2-C3-CN | conformer 20개 | 최저 E -29.809076 Eh | HOMO -10.41 eV | 8.5 s
+[02:32:42] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:42] UFFTYPER: Unrecognized charge state for atom: 0
+[31/87] PO3H2-C3-CF3 | conformer 20개 | 최저 E -41.141238 Eh | HOMO -12.33 eV | 10.5 s
+[02:32:43] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:43] UFFTYPER: Unrecognized charge state for atom: 0
+[02:32:45] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:45] UFFTYPER: Unrecognized charge state for atom: 0
+[32/87] PO3H2-Ph-SO3H | conformer 20개 | 최저 E -46.154238 Eh | HOMO -10.62 eV | 27.4 s
+[02:32:45] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:32:45] UFFTYPER: Unrecognized charge state for atom: 0
+[33/87] PO3H2-C3-OCH3 | conformer 20개 | 최저 E -32.525118 Eh | HOMO -11.46 eV | 9.7 s
+[34/87] PO3H2-C3-COOH | conformer 20개 | 최저 E -35.588666 Eh | HOMO -10.35 eV | 9.0 s
+[35/87] COOH-Ph-H | conformer 20개 | 최저 E -25.593105 Eh | HOMO -11.35 eV | 4.5 s
+[36/87] PO3H2-C3-NH2 | conformer 20개 | 최저 E -28.731696 Eh | HOMO -11.14 eV | 8.8 s
+[37/87] COOH-Ph-CH3 | conformer 20개 | 최저 E -28.765958 Eh | HOMO -10.98 eV | 5.8 s
+[38/87] COOH-Ph-F | conformer 20개 | 최저 E -29.820898 Eh | HOMO -11.55 eV | 5.2 s
+[39/87] PO3H2-C3-SO3H | conformer 20개 | 최저 E -40.777503 Eh | HOMO -11.68 eV | 16.7 s
+[40/87] COOH-Ph-CF3 | conformer 20개 | 최저 E -41.442655 Eh | HOMO -12.12 eV | 8.5 s
+[41/87] COOH-Ph-CN | conformer 20개 | 최저 E -30.114845 Eh | HOMO -11.77 eV | 6.3 s
+[42/87] COOH-Ph-OCH3 | conformer 20개 | 최저 E -32.829186 Eh | HOMO -8.81 eV | 6.4 s
+[43/87] COOH-C3-H | conformer 20개 | 최저 E -20.202891 Eh | HOMO -11.99 eV | 2.9 s
+[44/87] COOH-Ph-COOH | conformer 20개 | 최저 E -35.895465 Eh | HOMO -11.70 eV | 7.9 s
+[45/87] COOH-Ph-NH2 | conformer 20개 | 최저 E -29.036420 Eh | HOMO -8.62 eV | 5.6 s
+[46/87] COOH-C3-CH3 | conformer 20개 | 최저 E -23.368562 Eh | HOMO -11.70 eV | 4.1 s
+[47/87] COOH-C3-F | conformer 20개 | 최저 E -24.425574 Eh | HOMO -12.32 eV | 5.4 s
+[48/87] COOH-Ph-SO3H | conformer 20개 | 최저 E -41.059318 Eh | HOMO -11.85 eV | 11.3 s
+[49/87] COOH-C3-CN | conformer 20개 | 최저 E -24.721308 Eh | HOMO -11.74 eV | 4.1 s
+[50/87] COOH-C3-CF3 | conformer 20개 | 최저 E -36.052583 Eh | HOMO -12.66 eV | 7.4 s
+[51/87] COOH-C3-OCH3 | conformer 20개 | 최저 E -27.423496 Eh | HOMO -11.08 eV | 5.4 s
+[52/87] COOH-C3-COOH | conformer 20개 | 최저 E -30.501504 Eh | HOMO -11.62 eV | 5.5 s
+[53/87] COOH-C3-NH2 | conformer 20개 | 최저 E -23.623316 Eh | HOMO -8.82 eV | 4.0 s
+[02:33:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:33:20] UFFTYPER: Unrecognized charge state for atom: 0
+[02:33:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:33:20] UFFTYPER: Unrecognized charge state for atom: 0
+[54/87] C6F5-thiol | conformer 20개 | 최저 E -40.234794 Eh | HOMO -11.29 eV | 1.9 s
+[02:33:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[02:33:20] UFFTYPER: Unrecognized charge state for atom: 0
+[55/87] COOH-C3-SO3H | conformer 20개 | 최저 E -35.670723 Eh | HOMO -11.84 eV | 11.2 s
+[56/87] 3,5-(CF3)2-C6H3-thiol | conformer 20개 | 최저 E -50.841458 Eh | HOMO -10.99 eV | 11.1 s
+[57/87] C6F5-PO3H2 | conformer 20개 | 최저 E -51.769757 Eh | HOMO -10.87 eV | 19.9 s
+[58/87] ZW-SO3-n2-m1 | conformer 20개 | 최저 E -38.988613 Eh | HOMO -10.21 eV | 14.7 s
+[59/87] 3,5-(CF3)2-C6H3-PO3H2 | conformer 20개 | 최저 E -62.379886 Eh | HOMO -10.89 eV | 21.0 s
+[60/87] ZW-SO3-n2-m2 | conformer 20개 | 최저 E -42.156508 Eh | HOMO -10.20 eV | 14.2 s
+[61/87] ZW-SO3-n3-m1 | conformer 20개 | 최저 E -42.158793 Eh | HOMO -9.89 eV | 18.1 s
+[62/87] ZW-SO3-n2-m3 | conformer 20개 | 최저 E -45.333885 Eh | HOMO -10.03 eV | 23.6 s
+[63/87] ZW-SO3-n2-m4 | conformer 20개 | 최저 E -48.501297 Eh | HOMO -10.00 eV | 23.7 s
+[64/87] ZW-SO3-n2-m5 | conformer 20개 | 최저 E -51.665512 Eh | HOMO -10.00 eV | 31.9 s
+[65/87] ZW-SO3-n3-m2 | conformer 20개 | 최저 E -45.324132 Eh | HOMO -10.09 eV | 14.5 s
+[66/87] ZW-COO-n2-m1 | conformer 20개 | 최저 E -33.792679 Eh | HOMO -9.96 eV | 9.5 s
+[67/87] ZW-SO3-n3-m4 | conformer 20개 | 최저 E -51.660333 Eh | HOMO -10.09 eV | 25.8 s
+[68/87] ZW-SO3-n3-m3 | conformer 20개 | 최저 E -48.496769 Eh | HOMO -10.08 eV | 27.8 s
+[69/87] ZW-COO-n2-m2 | conformer 20개 | 최저 E -36.958937 Eh | HOMO -9.97 eV | 9.8 s
+[70/87] ZW-SO3-n3-m5 | conformer 20개 | 최저 E -54.826942 Eh | HOMO -9.91 eV | 31.4 s
+[71/87] ZW-COO-n2-m3 | conformer 20개 | 최저 E -40.117302 Eh | HOMO -9.89 eV | 18.3 s
+[72/87] ZW-COO-n3-m1 | conformer 20개 | 최저 E -36.956383 Eh | HOMO -10.18 eV | 11.9 s
+[73/87] ZW-COO-n2-m4 | conformer 20개 | 최저 E -43.292286 Eh | HOMO -9.87 eV | 27.7 s
+[74/87] ZW-COO-n2-m5 | conformer 20개 | 최저 E -46.453946 Eh | HOMO -9.83 eV | 27.0 s
+[75/87] ZW-COO-n3-m2 | conformer 20개 | 최저 E -40.122316 Eh | HOMO -9.86 eV | 14.8 s
+[76/87] L-cysteine | conformer 20개 | 최저 E -24.308135 Eh | HOMO -9.95 eV | 2.6 s
+[77/87] L-cysteine-zwitterion | conformer 20개 | 최저 E -24.304764 Eh | HOMO -10.46 eV | 5.0 s
+[78/87] 3-mercaptopropionic-acid | conformer 20개 | 최저 E -20.884472 Eh | HOMO -10.05 eV | 1.4 s
+[79/87] benzene | conformer 20개 | 최저 E -15.879640 Eh | HOMO -10.95 eV | 0.4 s
+[80/87] toluene | conformer 20개 | 최저 E -19.050389 Eh | HOMO -10.61 eV | 1.0 s
+[81/87] anisole | conformer 20개 | 최저 E -23.113183 Eh | HOMO -10.27 eV | 1.5 s
+[82/87] ZW-COO-n3-m3 | conformer 20개 | 최저 E -43.290717 Eh | HOMO -9.89 eV | 19.3 s
+[83/87] phenol | conformer 20개 | 최저 E -19.954133 Eh | HOMO -10.43 eV | 0.9 s
+[84/87] aniline | conformer 20개 | 최저 E -19.316624 Eh | HOMO -9.67 eV | 2.4 s
+[85/87] thiophenol-gas | conformer 20개 | 최저 E -19.130439 Eh | HOMO -10.14 eV | 4.4 s
+[86/87] ZW-COO-n3-m4 | conformer 20개 | 최저 E -46.456176 Eh | HOMO -9.87 eV | 23.6 s
+[87/87] ZW-COO-n3-m5 | conformer 20개 | 최저 E -49.617152 Eh | HOMO -9.76 eV | 28.8 s
+# 완료: 총 230 s
