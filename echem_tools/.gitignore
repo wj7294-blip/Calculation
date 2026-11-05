@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# 실제 데이터와 산출물은 기본적으로 추적하지 않음 (합성 검증 결과는 results_synthetic/ 에 남김)
+data/eis/*
+data/float/*
+!data/eis/.gitkeep
+!data/float/.gitkeep
+results/*
+data_synthetic/
+# 합성 검증 결과는 리포트/CSV/핵심 그림만 추적 (용량 절감)
+results_synthetic/eis/*
+results_synthetic/float/*
+!results_synthetic/eis/lambda_sweep.png
+!results_synthetic/eis/R0_3RC_FLW_noise1.0_drt.png
+!results_synthetic/eis/R0_3RC_FLW_noise1.0_gcv.png
+!results_synthetic/float/interaction_leak_mA_g.png
+!results_synthetic/float/group_leak_mA_g.png
+!results_synthetic/float/all_cells_decay.png

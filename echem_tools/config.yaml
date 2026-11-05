@@ -1,0 +1,129 @@
+# ============================================================
+# echem_tools configuration
+# 모든 수치/경로는 여기서 바꾼다. CLI 인자가 있으면 CLI가 우선.
+# ============================================================
+paths:
+  data_dir: data            # data/eis/*, data/float/* (metadata.csv의 file 열은 data_dir 기준 상대경로)
+  metadata: metadata.csv
+  results_dir: results
+
+# ---------- CSV 열 이름 매핑 (Neware / LANHE / 일반) ----------
+# 각 표준 이름(time_s, voltage_V, current_mA, ...)에 후보 열 이름을 나열.
+# 처음으로 발견되는 후보를 사용. scale은 단위 변환 계수(예: A -> mA 는 1000).
+csv_profiles:
+  generic:
+    delimiter: null          # null = 자동 감지
+    time_s:      {candidates: ["time_s", "time/s", "Time (s)", "t/s", "time"], scale: 1.0}
+    voltage_V:   {candidates: ["voltage_V", "Ewe/V", "Voltage (V)", "E/V", "V", "voltage"], scale: 1.0}
+    current_mA:  {candidates: ["current_mA", "I/mA", "<I>/mA", "Current (mA)", "I", "current"], scale: 1.0}
+    step:        {candidates: ["step", "Step", "mode", "Ns"], scale: 1.0}
+    cycle:       {candidates: ["cycle", "cycle number", "Cycle"], scale: 1.0}
+    freq_Hz:     {candidates: ["freq_Hz", "freq/Hz", "Frequency (Hz)", "f/Hz", "Freq"], scale: 1.0}
+    Zre_ohm:     {candidates: ["Zre_ohm", "Re(Z)/Ohm", "Z' (ohm)", "Zreal", "Z'"], scale: 1.0}
+    Zim_ohm:     {candidates: ["Zim_ohm", "Im(Z)/Ohm", "Z'' (ohm)", "Zimag", "Z''"], scale: 1.0}
+    negZim_ohm:  {candidates: ["-Im(Z)/Ohm", "-Z'' (ohm)", "-Zimag"], scale: 1.0}   # 있으면 Zim = -negZim
+  neware:
+    delimiter: null
+    time_s:      {candidates: ["Total Time(s)", "Total Time", "TestTime(s)", "Test Time(s)", "Time(s)"], scale: 1.0}
+    voltage_V:   {candidates: ["Voltage(V)", "Voltage (V)", "Volt(V)"], scale: 1.0}
+    current_mA:  {candidates: ["Current(mA)", "Current (mA)"], scale: 1.0}
+    current_A:   {candidates: ["Current(A)", "Current (A)"], scale: 1000.0}     # A -> mA
+    step:        {candidates: ["Step Type", "Step Name", "Step ID", "StepType"], scale: 1.0}
+    cycle:       {candidates: ["Cycle Index", "Cycle ID", "Cycle"], scale: 1.0}
+    cv_step_labels: ["CV_Chg", "CV Chg", "CCCV_Chg", "Constant Voltage Charge"]   # 있으면 정전압 구간 판별에 보조로 사용
+  lanhe:
+    delimiter: null
+    time_s:      {candidates: ["TestTime/s", "Test Time(s)", "SysTime"], scale: 1.0}
+    voltage_V:   {candidates: ["Voltage/V", "Voltage(V)"], scale: 1.0}
+    current_mA:  {candidates: ["Current/mA", "Current(mA)"], scale: 1.0}
+    current_A:   {candidates: ["Current/A", "Current(A)"], scale: 1000.0}
+    step:        {candidates: ["State", "Step", "StepType"], scale: 1.0}
+    cycle:       {candidates: ["Cycle", "Cycle ID"], scale: 1.0}
+    cv_step_labels: ["CV_Chg", "CV", "C_CV"]
+# metadata.csv의 file 확장자가 .csv 이면 아래 기본 프로파일을 쓴다 (metadata에 profile 열이 있으면 그것이 우선)
+default_csv_profile: generic
+
+# ---------- EIS -> DRT ----------
+eis:
+  freq_min_Hz: 0.01          # 전처리: 이 범위 밖은 자른다 (null = 자르지 않음)
+  freq_max_Hz: 1.0e6
+  inductive_tail: fit        # 유도성 꼬리(-Z''<0) 처리: keep | drop | fit  (fit = 인덕턴스 L을 함께 적합)
+  kk:
+    enabled: true
+    c: 0.85                  # impedance.py linKK의 mu 임계값
+    max_M: 100
+    plateau_tol: 1.2         # μ<c 를 만족하는 M 중 rms 잔차가 최소값의 1.2배 이내인 가장 작은 M 선택 (조기 종료 방지)
+    residual_warn_rms_pct: 1.0   # 잔차 rms(%)가 이 값을 넘으면 경고
+    residual_warn_max_pct: 5.0   # 잔차 최대값(%)이 이 값을 넘으면 경고
+  drt:
+    backend: auto            # auto | builtin | pydrttools
+    tau_per_decade: 10       # τ 격자 밀도
+    tau_pad_decades: 1.0     # 측정 주파수 범위 밖으로 τ 격자를 확장할 데케이드 수
+    rbf_shape: 1.5           # 가우시안 RBF 폭: FWHM = rbf_shape × (τ 격자 간격, ln 단위). 1 미만이면 기저가 격자보다 좁아 울퉁불퉁해짐
+    reg_order: 2             # Tikhonov 미분 차수 (0, 1, 2)
+    lambda: auto             # auto (GCV) 또는 숫자 (예: 1.0e-3). λ는 무차원 (정규화된 벌점: 아래 README 참조)
+    lambda_grid: [1.0e-6, 1.0e1, 36]   # GCV 탐색 격자 [min, max, n]
+    weighting: modulus       # unit | modulus (1/|Z| 가중)
+    fit_inductance: true
+    peak_prominence: 0.03    # 피크 검출: max(γ) 대비 상대 prominence
+    peak_min_rel_height: 0.02
+  compare:
+    group_by: cell_id        # 비교 모드 그룹 키 (metadata 열 이름 또는 "file")
+    color_by: null           # null 이면 group_by 와 동일
+
+# ---------- 고전압 플로팅 누설전류 ----------
+floating:
+  V_hold: 4.6
+  V_tol: 0.02                # |V - V_hold| <= V_tol 이면 정전압 구간으로 간주
+  c_rate: 0.1                # 정전류 구간 C-rate (합성 데이터 생성 및 문서용)
+  nominal_capacity_mAh_g: 200
+  hold_hours: 24
+  leak_window_h: 1.0         # 누설전류 = 마지막 이 시간의 평균 전류
+  transient_h: 1.0           # 누적 누설 용량에서 뺄 초기 과도 구간
+  decay_fit_window_h: [2.0, 24.0]   # log-log 감쇠 기울기 적합 구간 (정전압 시작 기준 시간)
+  min_cv_points: 20
+  stats:
+    factors: [surface, electrolyte]
+    metrics: [leak_mA_g, leak_uA_cm2, Q_leak_mAh_g, Q_leak_ex_transient_mAh_g, decay_slope]
+    alpha: 0.05
+    outlier_method: iqr      # iqr | mad
+    nonparametric: auto      # auto (정규성/등분산 의심 시) | always | never
+    posthoc: tukey           # tukey (전체 조합) + 각 전해질 내 surface 비교
+
+# ---------- 합성 데이터 (검증) ----------
+synthetic:
+  seed: 20251105
+  out_dir: data_synthetic
+  eis:
+    noise_pct: [0.5, 1.0]
+    freq_range: [1.0e5, 0.01]
+    points_per_decade: 10
+    circuits:
+      - name: R0_2RC
+        R0: 5.0
+        RC: [[10.0, 1.0e-4], [20.0, 1.0e-2]]       # [R, tau]
+        L: 1.0e-7
+      - name: R0_3RC_FLW
+        R0: 3.0
+        RC: [[8.0, 3.0e-5], [15.0, 1.0e-3], [12.0, 5.0e-2]]
+        FLW: [25.0, 10.0]                           # [R_W, tau_W]  finite-length Warburg
+        L: 2.0e-7
+      - name: R0_2RC_close      # λ에 따라 갈라지거나 합쳐지는 예시용 (τ 비 ≈ 8)
+        R0: 4.0
+        RC: [[10.0, 2.0e-3], [10.0, 1.6e-2]]
+        L: 0.0
+  floating:
+    surfaces: [bare, SAM6, SAM8, SAM9, SAM10]
+    electrolytes: [A, GSE, TTE]
+    n_per_group: 4
+    active_mass_mg: 8.0
+    area_cm2: 1.13
+    sample_interval_s: 30
+    base_leak_mA_g: 0.80
+    surface_effect:   {bare: 1.00, SAM6: 0.85, SAM8: 0.75, SAM9: 0.70, SAM10: 0.65}   # 곱셈 인자
+    electrolyte_effect: {A: 1.00, GSE: 0.70, TTE: 0.55}
+    interaction:      {"SAM8|TTE": 0.60, "SAM10|GSE": 1.45, "SAM9|GSE": 1.25}       # 일부러 넣은 상호작용 (곱셈)
+    cell_cv: 0.10             # 셀 간 변동 (상대 SD)
+    noise_rel: 0.02           # 전류 측정 노이즈 (상대)
+    decay_exponent: 0.75      # 과도 전류 ~ t^-n (셀마다 ±10 % 변동)
+    formats: [mpt, dta, neware_csv]   # 로더 테스트를 위해 세 형식으로 번갈아 저장

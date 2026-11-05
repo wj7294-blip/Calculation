@@ -1,0 +1,4 @@
+cell_id,file,type,surface,electrolyte,active_mass_mg,area_cm2,note
+# 예시 행 — 실제 데이터를 넣을 때 아래를 지우고 채우세요. type: eis | float. file 은 data/ 기준 상대경로.
+# EXAMPLE_01,eis/cell01.mpt,eis,bare,A,8.0,1.13,
+# EXAMPLE_02,float/cell02.DTA,float,SAM8,TTE,8.1,1.13,

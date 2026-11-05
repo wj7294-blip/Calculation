@@ -1,0 +1,11 @@
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+pyyaml>=6.0
+jinja2>=3.1
+impedance>=1.7      # lin-KK (Kramers-Kronig) validation
+statsmodels>=0.14   # two-way ANOVA, Tukey HSD
+scikit-posthocs>=0.9 # Dunn post-hoc (nonparametric)
+# optional: pyDRTtools (needs cvxopt, scikit-learn, PyQt5). If import fails the
+# built-in DRT solver is used automatically.
